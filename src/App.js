@@ -50,9 +50,9 @@ function App() {
     console.log('Deletando colaborador...')
   }
 
-  function mudaCorDoTime(cor, nome) {
+  function mudaCorDoTime(cor, id) {
     setTimes(times.map(time => {
-      if(time.nome === nome) {
+      if(time.id === id) {
         time.cor = cor;
       }
       return time;
@@ -66,6 +66,7 @@ function App() {
       
       {times.map(time => 
         <Time
+          id={time.id}
           mudarCor={mudaCorDoTime}
           key={time.nome} 
           nome={time.nome} 
